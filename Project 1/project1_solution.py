@@ -130,22 +130,26 @@ def main():
  
 
 
-    #getting data from the fourth ORF of minimum 10 for mutation use
-    ORFs = find_orfs(sequenceDictionary["sars"],10)
+    #getting data from the ninth ORF of minimum 50 for mutation use
+    ORFs = find_orfs(sequenceDictionary["sars"],50)
 
-    fourthORF= sequenceDictionary["sars"][ORFs[3]["start"]-1:ORFs[3]["stop"]]
-    translatedORF = translate(fourthORF)[:-1]
-    
-    
-    print "\nsingle nucleotide changes"
-    print translate(fourthORF)
+    ninthORF= sequenceDictionary["sars"][ORFs[8]["start"]-1:ORFs[8]["stop"]]
+    translatedORF = translate(ninthORF)[:-1]
+
+    print "\nThe ninth ORF for use in BLAST:"
+    print ("start: " + str(ORFs[8]["start"]) + "   stop: " + str(ORFs[8]["stop"]))
+    print ninthORF
+
+
+    print "\n\nsingle nucleotide changes"
+    print translate(ninthORF)
     for i in range(10):
-        randnucnum= random.randint(0,len(fourthORF)-1)
-        newnuc = random_nucleotide(fourthORF[randnucnum])
-        newseq = fourthORF[0:randnucnum] + newnuc + fourthORF[randnucnum+1:]
-        fourthORF =  newseq
+        randnucnum= random.randint(0,len(ninthORF)-1)
+        newnuc = random_nucleotide(ninthORF[randnucnum])
+        newseq = ninthORF[0:randnucnum] + newnuc + ninthORF[randnucnum+1:]
+        ninthORF =  newseq
         
-        print translate(fourthORF)
+        print translate(ninthORF)
 
     print "\n\nsingle AA changes"
     print translatedORF
@@ -156,7 +160,7 @@ def main():
         translatedORF =  newtranslate
         
         print translatedORF
-       z
+       
         
 if __name__ == '__main__':
     main()
