@@ -1,29 +1,34 @@
-from tcslib import *   # this will also import the sys and re modules
+from tcslib import * 
 import re
 import random
 
 #returns a list of dictionaries 
 def find_orfs(sequence, minLength):
 
+
     '''
     Your code goes here
     '''
        
+
     # TODO: returns list of ORFS formatted as
       #[ {’frame’: 0, ’stop’: 13413, ’aalength’: 4382, ’start’: 265,’stopcodon’: ’UAA’, ’nlength’: 13149}, {}, {} ]
                                 
                 
     return
 
-#main function
-def solve_orfs():
-    
-    #string of sequence found with sequenceDictionary["sars"]
-    sequenceDictionary = get_fasta_dict("sars.fasta") 
-    
-    
 
-    """Your code goes here..."""
+
+def main():
+    
+    sequenceDictionary = get_fasta_dict("sars.fasta") 
+    sarsSequence = sequenceDictionary["sars"]
+
+
+    
+    '''
+    Your code goes here
+	'''
 
 
 
@@ -33,8 +38,10 @@ def solve_orfs():
 
 
  
-    # TODO: simulate mutations
+    # TODO: /Section 2/ simulate mutations (hint: create additional methods)
       
+
+
         
 if __name__ == '__main__':
-    solve_orfs()
+    main()

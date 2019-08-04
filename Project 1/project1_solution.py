@@ -110,7 +110,7 @@ def find_orfs(seq, min):
                 
     return myORFs
 
-def solve_orfs():
+def main():
     """Your code goes here..."""
     sequenceDictionary = get_fasta_dict("sars.fasta")
     
@@ -118,7 +118,7 @@ def solve_orfs():
 
     for length in minLengths:
         ORFs = find_orfs(sequenceDictionary["sars"],length)
-        print "Our algorithm has found " + str(len(ORFs)) + " ORFS longer than " + str(length) + " amino acids"        
+        print "Our algorithm has found " + str(len(ORFs)) + " ORFs longer than " + str(length) + " amino acids"        
         
         #finding and printing the mean of all the peptide lengths
         total =0
@@ -156,7 +156,7 @@ def solve_orfs():
         translatedORF =  newtranslate
         
         print translatedORF
-      
+       z
         
 if __name__ == '__main__':
-    solve_orfs()
+    main()
