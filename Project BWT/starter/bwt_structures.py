@@ -13,77 +13,9 @@ def forward_bwt(seq):
     print forward_bwt('GATTACA$') --> 'ACTGA$TA'
     """
     
-    """SOLUTION CODE HERE"""
-    rotations = []
-    
-    # Generate list of rotations.
-    for x in range(len(seq)):
-        new_s = seq[x:] + seq[:x]
-        rotations.append(new_s)
-        
+    # TODO: Add code to create bwt
     # Return the last column from the sorted list of rotations.
     return "".join(x[-1] for x in sorted(rotations))
-    
-def reverse_bwt(seq):
-    """
-    reverse_bwt(seq) takes as input a string containing the EOF
-    character to which the reverse of the BWT must be applied.
-    The method should then return the result of the reversal on
-    the input string.
-    
-    For example:
-    print reverse_bwt('ACTGA$TA') --> 'GATTACA$'
-    """    
-    
-    """SOLUTION CODE HERE"""
-    
-    # This solution employs an implementation of the
-    # LF mapping strategy outlined in Problem 3 Part (b).
-    # Commented out below is a solution which relies on
-    # an append-and-sort strategy. Both are valid ways to
-    # solve the problem at hand.
-    
-    # LF MAPPING STRATEGY
-    '''
-    firstColumnChars = ''.join(sorted(list(seq)))
-    firstColumnRanks = rank(firstColumnChars)
-
-    lastColumnRanks = rank(seq)
-    
-    originalSequence = ""
-    currentPosition = lastColumnRanks["$"].index(1)
-    while currentPosition != 0:
-        currentChar = firstColumnChars[currentPosition]
-        originalSequence += currentChar
-        nextPosition = firstColumnRanks[currentChar][currentPosition]
-        currentPosition = lastColumnRanks[currentChar].index(nextPosition)
-    
-    originalSequence += "$"
-    
-    return originalSequence
-    '''
-    # APPEND-AND-SORT STRATEGY
-    
-    # Initialize empty table.
-    rotations = [[] for x in range(len(seq))]
-    
-    # Repeat for as many characters as there are in the input sequence.
-    counter = 0
-    while counter < len(seq):
-        counter += 1
-        
-        # Insert sequence as first column of the table.
-        for x in range(len(rotations)):
-            rotations[x].insert(0,seq[x])
-            
-        # Sort rows of the table alphabetically.
-        rotations.sort()
-    
-    # Return rotation ending in '$' (i.e. the original sequence).
-    for x in range(len(rotations)):
-        if rotations[x][-1] == '$':
-            return "".join(rotations[x])
-    return "No EOF character ('$') found."
     
 
 # It may be helpful to read the documentation for the methods
@@ -98,12 +30,10 @@ def make_suffix_array(seq):
     print make_suffix_array('GATTACA$') --> [7, 6, 4, 1, 5, 0, 3, 2]
     """
     suffixes = {}
-    for x in range(len(seq)):
-        suffixes[seq[x:]] = x
-    suffix_array = [suffixes[suffix] for suffix in sorted(suffixes.keys())]
+    # TODO: Populate the suffix array
     return suffix_array
 
-def rank(bwt_seq):
+def occ_rank(bwt_seq):
     """
     Takes as input a string transformed by the BWT. Returns a
     dictionary with characters as keys and lists as values.
@@ -120,12 +50,7 @@ def rank(bwt_seq):
     """
     rank = {}
     characters = set(bwt_seq)
-    for character in characters:
-        rank[character] = [0]
-    rank[bwt_seq[0]] = [1]
-    for letter in bwt_seq[1:]:
-        for k, v in rank.items():
-            v.append(v[-1] + (k == letter))
+    # TODO: Populate the Occ table for occurences of letters
     return rank
 
 def count_smaller_chars(seq):
@@ -146,9 +71,7 @@ def count_smaller_chars(seq):
     cntr = Counter(seq)
     total = 0
     counts = {}
-    for character in sorted(characters):
-        counts[character] = total
-        total += cntr[character]
+    # TODO: Count the smaller characters per character 
     return counts
 
 def make_all(reference):
