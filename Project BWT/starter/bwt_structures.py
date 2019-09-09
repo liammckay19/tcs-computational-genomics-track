@@ -50,7 +50,7 @@ def occ_rank(bwt_seq):
     """
     rank = {}
     characters = set(bwt_seq)
-    # TODO: Populate the Occ table for occurences of letters
+    # (You may give this to the student) TODO: Populate the Occ table for occurences of letters
     return rank
 
 def count_smaller_chars(seq):
@@ -71,7 +71,7 @@ def count_smaller_chars(seq):
     cntr = Counter(seq)
     total = 0
     counts = {}
-    # TODO: Count the smaller characters per character 
+    # (You may give this to the student) TODO: Count the smaller characters per character 
     return counts
 
 def make_all(reference):
