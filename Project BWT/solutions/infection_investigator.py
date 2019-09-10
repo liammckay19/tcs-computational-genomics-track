@@ -97,6 +97,9 @@ def align_patient_reads():
             f.write(str(sorted(counts[bacteria])) + '\n')
         f.close()
     
+
+    #FOR CHALLENEGE PROBLEM:
+
     # Call to functions which generate a given vector count and
     # locate the longest string of zeros in such a vector.
     patient1_Vc_counts = read_mapper('patient1', 'Vibrio_cholerae')
@@ -110,6 +113,8 @@ def align_patient_reads():
 
     
 def read_mapper(patient, bacteria):
+    # FOR CHALLENGE PROBLEM 
+
     # For a given patient and bacterial species, return a vector
     # which counts the number of the patient's reads which map
     # to each of the locations in the reference genome for the
@@ -131,6 +136,8 @@ def read_mapper(patient, bacteria):
     return count_vector
 
 def longest_zeros(count_vector):
+    # FOR CHALLENGE PROBLEM
+
     # Given a count vector, return the start and stop position of
     # the longest string of zeros in the vector.
     
