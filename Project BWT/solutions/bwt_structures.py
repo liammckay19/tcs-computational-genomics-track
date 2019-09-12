@@ -103,7 +103,7 @@ def make_suffix_array(seq):
     suffix_array = [suffixes[suffix] for suffix in sorted(suffixes.keys())]
     return suffix_array
 
-def rank(bwt_seq):
+def occ_rank(bwt_seq):
     """
     Takes as input a string transformed by the BWT. Returns a
     dictionary with characters as keys and lists as values.
@@ -161,7 +161,7 @@ def make_all(reference):
     reference = reference + '$'
     suffix_array = make_suffix_array(reference)
     bwt = forward_bwt(reference)
-    ranks = rank(bwt)
+    ranks = occ_rank(bwt)
     return bwt, suffix_array, ranks, counts
 
 if __name__ == '__main__':
