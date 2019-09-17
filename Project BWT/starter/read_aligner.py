@@ -17,7 +17,12 @@ def find(query, bwt_data):
     """SOLUTION CODE HERE"""
     # TODO: Add code for the beginning of the algorithm
     while index > 0: # We will backtrack through the query until we get to the beginning.
-        # TODO: Complete the algorithm for the query
+
+        # TODO: Look at the next character in the query.
+        
+        # TODO: Set new beginning and end variables to reflect the new subset of sorted suffixes we are currently examining.
+
+        # TODO: Return if we can no longer match our query to the reference at any point in the backtracking process.
         
     # Add the position(s) in the reference genome to which our
     # query aligns. This information is encoded in the suffix array.
