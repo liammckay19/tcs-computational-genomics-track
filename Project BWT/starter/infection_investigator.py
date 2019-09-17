@@ -49,6 +49,9 @@ def align_patient_reads():
     #TODO: For each reference genome, preprocess their BWT structures, storing each
     #       one in the "structures" dictionary
     #       HINT: the make_all method that is imported should help
+    #             ex. structure[**bacteria name**] = make_all(sequences[**bacteria name**])
+
+
 
 
 
@@ -57,16 +60,19 @@ def align_patient_reads():
     #TODO: for each patient, import their reads into the "reads" dictionary
     #       where keys are the patient IDs and the values are another dictionary
     #       containing pairs of read ID : read
+
     
 
 
     #TODO: begin iterating through each read for each patient, collecting all 
     #       necessary data for later analysis... this involves
-    #           * classifying each read (identifying the microbe)
+    #           * classifying each read (identifying the microbe) - use find() method from read_aligner.py
     #           * counting the prevalence of each microbe in each patient
     #
     #           ** don't forget to call reverse_complement on reads **
     #           ** don't forget to discard reads that map to more than one microbe **
+    # 
+    #        ex. find(read, structures[**bacteria name **])
 
 
 
