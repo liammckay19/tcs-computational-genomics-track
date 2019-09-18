@@ -15,12 +15,15 @@ def forward_bwt(seq):
     
     # TODO: Add code to create bwt
     # Return the last column from the sorted list of rotations.
+    
+    # Hint: You are given this piece of code below that will return the last character in 
+    #       an string array of rotations. 
     return "".join(x[-1] for x in sorted(rotations))
     
 
 # It may be helpful to read the documentation for the methods
 # given below, but you will NOT have to make any changes to
-# them in order to complete the problem set.
+# them in order to complete the problems
 
 def make_suffix_array(seq):
     """
@@ -28,12 +31,23 @@ def make_suffix_array(seq):
     
     For example:
     print make_suffix_array('GATTACA$') --> [7, 6, 4, 1, 5, 0, 3, 2]
+    
+    because this is the order in lexographical order:
+    7 $GATTACA
+    6 A$GATTAC
+    4 ACA$GATT
+    1 ATTACA$G
+    5 CA$GATTA
+    0 GATTACA$
+    3 TACA$GAT
+    2 TTACA$GA
     """
     suffixes = {}
-    # TODO: Populate the suffix array
+    # TODO: Populate the suffix array. 
+    # This is the array that will order every suffix or rotation and display the index position of the rotation. 
     return suffix_array
 
-def occ_occ_rank(bwt_seq):
+def occ_rank(bwt_seq):
     """
     Takes as input a string transformed by the BWT. Returns a
     dictionary with characters as keys and lists as values.
@@ -50,7 +64,7 @@ def occ_occ_rank(bwt_seq):
     """
     rank = {}
     characters = set(bwt_seq)
-    # (You may give this to the student) TODO: Populate the Occ table for occurences of letters
+    # (You may give the answer to the student) TODO: Populate the Occ table for occurences of letters
     return rank
 
 def count_smaller_chars(seq):
@@ -71,7 +85,7 @@ def count_smaller_chars(seq):
     cntr = Counter(seq)
     total = 0
     counts = {}
-    # (You may give this to the student) TODO: Count the smaller characters per character 
+    # TODO: Count the smaller characters per character 
     return counts
 
 def make_all(reference):
